@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 //import Counter from './components/counter';
 import 'font-awesome/css/font-awesome.css';
 //import Counters from "./components/counters";
-import Movies from "./components/movies";
+//import Movies from "./components/movies";
 
 ReactDOM.render(
-    <Movies />,
-  document.getElementById('root')
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
