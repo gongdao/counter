@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Movies from './components/movies.jsx';
+import MoviesNew from './components/moviesNew';
 import LoginForm from './components/loginForm';
 import RegisterForm from './components/registerForm';
 import Customers from './components/customers';
@@ -19,6 +20,7 @@ class App extends Component {
 						<Route path='/login' component={LoginForm} />
 						<Route path='/register' component={RegisterForm} />
 						<Route path='/movies' component={Movies} />
+						<Route path='/movie/:id' component={MoviesNew} />
 						<Route path='/customers' component={Customers} />
 						<Route path='/rentals' component={Rentals} />
 						<Route path='/not-found' component={NotFound} />

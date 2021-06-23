@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import _ from "lodash";
 const Pagination = (props) => {
   const { itemsCount, pageSize, currentPage, onPageChange } = props;
-  console.log(currentPage);
+  //console.log(currentPage);
   const pagesCount = Math.ceil(itemsCount / pageSize);
   //console.log('pagesCount', pagesCount);
   if (pagesCount === 1) return null;

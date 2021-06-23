@@ -1,10 +1,10 @@
 import React from 'react';
 import Joi from 'joi-browser';
-import Form from './common/form';
+import Form from './common/form.jsx';
 import { getMovie, saveMovie } from '../services/fakeMovieService';
 import { getGenres } from '../services/fakeGenreService';
 
-class MovieForm extends Form {
+class MoviesNew extends Form {
 	state = {
 		data: {
 			title: '',
@@ -36,7 +36,11 @@ class MovieForm extends Form {
 		this.setState({ genres });
 
 		const movieId = this.props.match.params.id;
-		if (movieId === 'new') return;
+		//console.log('To create a movie...', movieId);
+		if (movieId === 'new') {
+			//console.log('To create a movie...');
+			return;
+		}
 		const movie = getMovie(movieId);
 		if (!movie) return this.props.history.replace('not-found');
 
@@ -54,9 +58,10 @@ class MovieForm extends Form {
 	}
 
 	doSubmit = () => {
+		console.log('this.state.data', this.state.data);
 		saveMovie(this.state.data);
 
-		this.props.history.push('movies');
+		this.props.history.push('/movies');
 	};
 
 	render() {
@@ -75,4 +80,4 @@ class MovieForm extends Form {
 	}
 }
 
-export default MovieForm;
+export default MoviesNew;
